@@ -1,0 +1,17 @@
+run constants;
+if and( (with_noise == false), (with_tracking == false))
+    save('timeseries/X_clean_untracked.mat', 'X_clean')
+    save('timeseries/w_clean_untracked', 'w_clean')
+    save('timeseries/X_ref_clean_untracked', 'X_ref')
+    save('timeseries/xhat_clean_untracked', 'xhat')
+elseif and( (with_noise == false), (with_tracking == true))
+    save('timeseries/X_clean_tracked', 'X_clean')
+    save('timeseries/w_clean_tracked', 'w_clean')
+    save('timeseries/X_ref_clean_tracked', 'X_ref')
+    save('timeseries/xhat_clean_tracked', 'xhat')
+elseif and( (with_noise == true), (with_tracking == true))
+    save('timeseries/X_noisy_tracked', 'X_noisy')
+    save('timeseries/w_noisy_tracked', 'w_noisy')
+    save('timeseries/X_ref_noisy_tracked', 'X_ref')
+    save('timeseries/xhat_noisy_tracked', 'xhat')
+end
